@@ -1,0 +1,80 @@
+Option 0 - Global Parameters
+Projection   : WGS84
+Image        : DistanceBatch1.mat
+Boundary     : 
+ShearModulus : 3e11      #dyne/cm2
+IM           : 0
+im           : 
+MaxDistance  : 500
+MagDiscrete  : gauss 10
+Sigma        : overwrite 0
+PCE          : shuffle MC 500
+IM1          : 0.01
+IM2          : 1
+Spatial      : 
+Spectral     : 
+SourceDeagg  : on
+Clusters     : off 100 1
+
+Option 1 - Logic Tree Weights
+Geom Weight : 1
+Gmpe Weight : 1
+Mscl Weight : 1 
+
+Option 2 - Source Geometry
+geometry 1 # Ztor = 15, W = 15*sqrt(2), L = 10, dip = 45°East
+#area1 S1 crustal strike-slip wc1994 0 1 | 45 25 40  2  0 0   rigid | -71 -30      -71 -29.909
+area2  S1 crustal strike-slip wc1994 0 1 | 0 45 | 10 21.213 | 2.01 2 | -71 -30 -25
+          
+Option 3 - GMPE Library
+gmm Sadigh97 Sadigh1997 strike-slip
+
+Option 4 - GMPE GROUPS
+gmmgroup Sadigh1997 1
+
+Option 5 - MAGNITUDE SCALING RELATIONS
+seismicity 1
+delta S1 NM 2 8
+
+Option 6 - Pre defined sites (Optional)
+site1   -71.2071890185456  -29.9545 0 VS30 760 
+site2   -71.1864700974082  -29.9545 0 VS30 760 
+site3   -71.1657511823204  -29.9545 0 VS30 760 
+site4   -71.1450322726944  -29.9545 0 VS30 760 
+site5   -71.1243133677874  -29.9545 0 VS30 760 
+site6   -71.1035944669413  -29.9545 0 VS30 760 
+site7   -71.0828755694974  -29.9545 0 VS30 760 
+site8   -71.0621566747431  -29.9545 0 VS30 760 
+site9   -71.0414377820388  -29.9545 0 VS30 760 
+site10    -71.02071889068  -29.9545 0 VS30 760 
+site11  -70.9987827690927  -29.9545 0 VS30 760 
+site12  -70.9792811093189  -29.9545 0 VS30 760 
+site13  -70.9585622179672  -29.9545 0 VS30 760 
+site14  -70.9378433252484  -29.9545 0 VS30 760 
+site15  -70.9171244305069  -29.9545 0 VS30 760 
+site16   -70.896405533057  -29.9545 0 VS30 760 
+site17  -70.8756866322077  -29.9545 0 VS30 760 
+site18  -70.8549677273279  -29.9545 0 VS30 760 
+site19  -70.8342488176582  -29.9545 0 VS30 760 
+site20  -70.8135299026032  -29.9545 0 VS30 760 
+site21  -70.7928109814469  -29.9545 0 VS30 760 
+site22  -70.7720920534987  -29.9545 0 VS30 760 
+site23  -70.7513731181599  -29.9545 0 VS30 760 
+site24  -70.7306541746028  -29.9545 0 VS30 760 
+site25  -70.7099352223033  -29.9545 0 VS30 760 
+site26  -70.6892162605041  -29.9545 0 VS30 760 
+site27  -70.6684972885259  -29.9545 0 VS30 760 
+site28  -70.6477783057907  -29.9545 0 VS30 760 
+site29  -70.6270593114159  -29.9545 0 VS30 760 
+site30  -70.6063403049406  -29.9545 0 VS30 760 
+site31  -70.5856212855616  -29.9545 0 VS30 760 
+site32   -70.564902252622  -29.9545 0 VS30 760 
+site33  -70.5441832055513  -29.9545 0 VS30 760 
+site34  -70.5234641434294  -29.9545 0 VS30 760 
+site35  -70.5027450658467  -29.9545 0 VS30 760 
+site36  -70.4820259719508  -29.9545 0 VS30 760 
+site37  -70.4613068611179  -29.9545 0 VS30 760 
+site38  -70.4405877327743  -29.9545 0 VS30 760 
+site39   -70.419868585973  -29.9545 0 VS30 760 
+site40  -70.3991494203508  -29.9545 0 VS30 760 
+site41  -70.3784302350002  -29.9545 0 VS30 760 

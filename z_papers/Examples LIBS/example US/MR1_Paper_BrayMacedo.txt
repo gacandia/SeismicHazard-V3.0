@@ -1,0 +1,63 @@
+Option 0 - Global Parameters
+Projection   : ECEF
+Image        : 
+Boundary     : 
+ShearModulus : 3e11      #dyne/cm2
+IM           : CAV PGA 1
+im           : [logsp(0.1,3000,20);logsp(1e-4,1,20);logsp(1e-5,1,20)]
+MaxDistance  : 500
+MagDiscrete  : gauss 10
+Sigma        : 
+PCE          : shuffle MC 500
+IM1          : 0.01
+IM2          : 1
+Spatial      : 
+Spectral     : 
+SourceDeagg  : on
+Clusters     : off 100 1
+
+Option 1 - Logic Tree Weights
+Geom Weight : 1
+Gmpe Weight : 1
+Mscl Weight : 1 
+
+Option 2 - Source Geometry
+geometry 1
+area1 S1 crustal strike-slip wc1994 0 1 105.409255338946 2 0 0 rigid 0 0 0 0 0 -30 0 105.409255338946 -30 0 105.409255338946 0
+
+Option 3 - GMPE Library
+gmm CB11CavDp CB11 2.5 strike-slip cb08-nga-psv
+gmm CB14Sa    CB2014 2.5 strike-slip exclude global
+gmm at1       franky 1 2
+
+Option 4 - GMPE GROUPS
+gmmgroup CB 3
+
+Option 5 - MAGNITUDE SCALING RELATIONS
+seismicity 1
+truncexp S1 NM 1.133581580157040  0.7 4.0 7.5
+
+Option 6 - Pre defined sites (Optional)
+site1 20 0 0 VS30 270
+
+Option LIBS 1 - Liquefaction Analysis Options
+analysis   : FPBBA              # FPBBA or PBPA
+settlement : logsp(1,1000 ,30)  # mm
+tilt       : logsp(1,40,20)     # degrees
+nQ         : 1                  # number of percentiles in Q   uncertainty
+corr       : corr_CambpelBozorgnia2019 
+pypath     : "C:/Users/gcandia/AppData/Local/Programs/Python/Python36/python.exe" #"C:\Users\admin\AppData\Local\Programs\Python\Python39\python.EXE"
+
+Option LIBS 2 - Building and Site Specific Parameters
+site1 CPTZ1B3.txt
+
+Option LIBS 3 Settlement model library
+libs J2013Dv   Juang2013Dv
+libs BM2017Ds  BrayMacedo2017Ds
+libs BM2017    BrayMacedo2017
+libs null      libs_null
+
+Option LIBS 4 - Settlement branches
+ST1 null null BM2017Ds null 0.4
+ST1 null null J2013Dv  null 0.3
+ST1 null null BM2017   null 0.3

@@ -1,0 +1,59 @@
+Option 0 - Global Parameters
+Projection   : WGS84
+Image        : chile.mat
+Boundary     : CHL_adm1.shp
+ShearModulus : 3e11      #dyne/cm2
+IM           : 1 PGA
+im           : 
+MaxDistance  : 500
+MagDiscrete  : gauss 10
+Sigma        : truncate 3
+PCE          : shuffle MC 500
+IM1          : PGA
+IM2          : 1 2 3
+Spatial      : spa_JB2009 yes
+Spectral     : corr_Candia2019 interface
+SourceDeagg  : on
+Clusters     : off 100 1
+
+Option 1 - Logic Tree Weights
+Geom Weight : 1
+Gmpe Weight : 1
+Mscl Weight : 1
+
+Option 2 - Source Geometry
+geometry 1
+area1 zone2 interface normal strasser2010 0 1 60 rigid zone2.mat
+#area1 zone6 intraslab normal strasser2010 0 2 60 rigid zone6.mat
+
+Option 3 - GMPE Library
+gmm at1   Kuehn2020 interface south_america_s 0 0 0.55 2 100           
+#gmm at2   Kuehn2020 intraslab south_america_s 0 0 0.55 2 100
+
+Option 4 - GMPE GROUPS
+gmmgroup Kuehn2020 1
+
+Option 5 - MAGNITUDE SCALING RELATIONS
+seismicity 1
+truncexp zone2 NM 9.1201 0.8800 5 9.3
+#truncexp zone6 NM 3.7154 1.1100 5 8.4
+#seismicity 2
+#truncexp zone2 NM 9.1201 1   5.5 9.3
+#truncexp zone6 NM 3.7154 1.2 6.5 9.0
+
+
+
+
+Option 6 - Pre defined sites
+Site1 -70.5635 -33.1 0 VS30 1000
+Site2 -70.5635 -33.2 0 VS30 1000
+Site3 -70.5635 -33.3 0 VS30 1000
+Site4 -70.5635 -33.4 0 VS30 1000
+Site5 -70.5635 -33.5 0 VS30 1000
+
+Option 7 - Spacial distributed data
+#layer VS30 CHI_USGS.mat 500
+layer VS30 500
+
+Option 9 - Event Simulation (optional) 
+Maule27F interface 8.8 -73.08 -36.1 -30

@@ -1,0 +1,80 @@
+Option 0 - Global Parameters
+Projection   : WGS84
+Image        : Lima.mat
+Boundary     : PER_adm1.shp 
+ShearModulus : 3e11      #dyne/cm2
+IM           : -1 PGA
+im           : 
+MaxDistance  : 500
+MagDiscrete  : gauss 6
+Sigma        : 
+PCE          : shuffle MC 500
+IM1          : 0.01
+IM2          : 1
+Spatial      : 
+Spectral     : 
+SourceDeagg  : on
+Clusters     : off 100 1
+
+Option 1 - Logic Tree Weights
+Geom Weight : 1
+Gmpe Weight : 1
+Mscl Weight : 1 
+
+Option 2 - Source Geometry
+geometry 1
+area1 source1 interface normal  wc1994 0 1 100 30 0 80 rigid -80.991 -8.528 -25 -80.022 -10.322 -25 -77.184 -14.412 -25 -75.856 -13.563 -60 -77.824 -10.464 -60 -79.267 -7.74 -60
+area1 source2 intraslab normal  wc1994 0 2 100 30 0 80 rigid -80.991 -8.528 -25 -80.022 -10.322 -25 -77.184 -14.412 -25 -75.856 -13.563 -60 -77.824 -10.464 -60 -79.267 -7.74 -60
+                                                                                                                                                                                                        
+Option 3 - GMPE Library
+gmm at1 SiberRisk2019 interface
+gmm at2 SiberRisk2019 intraslab
+
+Option 4 - GMPE GROUPS
+gmmgroup SB 1 2
+
+Option 5 - MAGNITUDE SCALING RELATIONS
+seismicity 1
+truncexp source1 NM 1 1 5 8
+truncexp source2 NM 1 1 5 7
+
+Option 6 - Pre defined sites
+Lima1 -77.11 -12.05 0 VS30 760 ky 0.02 covky 0.2 Ts 0.3 covTs 0.1
+
+Option PSDA 1 - PSDA setup                                                                                             
+d         : logsp(1,200,50)  # cm
+realSa    : 30
+realD     : 40
+rng       : shuffle
+optimize  : on # optimize "on" uses the conditional term M|Sa in M-dependent CDMs
+kysamples : 1
+Tssamples : 1                                                                                                     
+                                                                            
+Option PSDA 2 Library of Slope Displacement Models                                                                    
+psda PLSR_F    PLSR_F
+psda PLSR_S    PLSR_S     
+     
+psda MLtestmdl MLtestmdl 0.6   # Sa(1.3s)-PGV correlation 
+psda RidgeMF   RidgeMF   0.6   # Sa(1.3s)-PGV correlation 
+psda RidgeMS   RidgeMS   0.6   # Sa(1.3s)-PGV correlation 
+
+psda SVR_MF   SVRMF     0.6   # Sa(1.3s)-PGV correlation 
+psda SVR_MS   SVRMS     0.6   # Sa(1.3s)-PGV correlation 
+
+psda RFMF      RFMF      0.6   # Sa(1.3s)-PGV correlation 
+psda RFMS      RFMS      0.6   # Sa(1.3s)-PGV correlation  
+
+psda GBDTMF    GBDTMF    0.6   # Sa(1.3s)-PGV correlation 
+psda GBDTMS    GBDTMS    0.6   # Sa(1.3s)-PGV correlation  
+
+psda PCRMF     PCRMF     0.6   # Sa(1.3s)-PGV correlation 
+psda PCRMS     PCRMS     0.6   # Sa(1.3s)-PGV correlation  
+
+Option PSDA 3 Slope Displacement Models                                                                               
+SL0  PLSR_F    PLSR_S    null null 1
+SL1  MLtestmdl MLtestmdl null null 1
+SL2  RidgeMF   RidgeMS   null null 1
+SL3  SVR_MF    SVRMF     null null 1
+SL4  RFMF      RFMF      null null 1
+SL5  GBDTMF    GBDTMF    null null 1
+SL6  PCRMF     PCRMF     null null 1

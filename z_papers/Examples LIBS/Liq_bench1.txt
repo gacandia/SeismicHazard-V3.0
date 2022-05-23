@@ -1,0 +1,68 @@
+Option 0 - Global Parameters
+Projection   : ECEF
+Image        : 
+Boundary     : 
+ShearModulus : 3e11      #dyne/cm2
+IM           : CAV PGA 1
+im           : [logsp(10,6000,20);logsp(0.01,1.5,20);logsp(0.01,3,20)]
+MaxDistance  : 500
+MagDiscrete  : gauss 10
+Sigma        : 
+PCE          : shuffle MC 500
+IM1          : 0.01
+IM2          : 1
+Spatial      : 
+Spectral     : 
+SourceDeagg  : on
+Clusters     : off 100 1
+
+Option 1 - Logic Tree Weights
+Geom Weight : 1
+Gmpe Weight : 1
+Mscl Weight : 1 
+
+Option 2 - Source Geometry
+geometry 1
+point1 fault1 interface strike-slip null 0 1 0 0 0 0 0
+#point1 fault2 intraslab strike-slip null 0 1 0 0 0 0 0
+#point1 fault3 crustal   strike-slip null 0 1 0 0 0 0 0
+
+Option 3 - GMPE Library
+gmm at1 franky 2 3 # composite (franky) models are used to merge CAV and SA values into one GMM
+gmm Bullock07  BU17 strike-slip cav
+gmm Sadigh97   Sadigh1997 strike-slip
+
+Option 4 - GMPE GROUPS
+gmmgroup Bullock_Sadigh 1
+
+Option 5 - MAGNITUDE SCALING RELATIONS
+seismicity 1
+delta fault1   NM 2 7.0 
+#delta fault2  NM 2 7.0 
+#delta fault3  NM 2 7.0 
+
+
+Option 6 - Pre defined sites (Optional)
+site1 0 20 0 VS30 760
+
+Option LIBS 1 - Liquefaction Analysis Options
+analysis   : FPBBA              # FPBBA or PBPA
+settlement : logsp(0.01,1000 ,20)  # mm
+tilt       : logsp(1,40,20)     # degrees
+nQ         : 1                  # number of percentiles in Q   uncertainty
+corr       : corr_CambpelBozorgnia2019
+pypath     : "C:/Users/gcandia/AppData/Local/Programs/Python/Python36/python.exe" #"C:\Users\admin\AppData\Local\Programs\Python\Python39\python.EXE"
+
+Option LIBS 2 - Building and Site Specific Parameters
+site1 CPT_benchSite.txt
+
+Option LIBS 3 Settlement model library
+libs BM2017    BrayMacedo2017
+libs BM2017Ds  BrayMacedo2017Ds
+libs J2013Dv   Juang2013Dv
+libs H2020De   Hutabarat2020De
+libs Bullock   Bullock2018
+libs null      libs_null
+
+Option LIBS 4 - Settlement branches
+ST1 Bullock null null null 1

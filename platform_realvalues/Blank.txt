@@ -1,0 +1,26 @@
+Option 0 - GLOBAL PARAMETERS
+Projection   : WGS84
+Image        : 
+Boundary     : 
+ShearModulus : 3e11      #dyne/cm2
+IM           : PGA
+im           : 
+MaxDistance  : 500
+MagDiscrete  : gauss 10
+Sigma        : 
+PCE          : shuffle MC 500
+IM1          : 0.01
+IM2          : 1
+Spatial      : @none_spatial
+Spectral     : @corr_none
+SourceDeagg  : on
+Clusters     : off 100 1
+Option 1 - LOGIT TREE WEIGHTS
+Geom Weight : 
+Gmpe Weight : 
+Mscl Weight :  
+Option 2 - SOURCE GEOMETRY
+Option 3 - GMPE Library
+Option 4 - GMPE GROUPS
+Option 5 - MAGNITUDE SCALING RELATIONS
+Option 6 - SITES

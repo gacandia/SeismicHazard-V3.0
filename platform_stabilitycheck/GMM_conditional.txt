@@ -1,0 +1,56 @@
+Option 0 - Global Parameters
+Projection   : WGS84
+Image        : chile.mat
+Boundary     : CHL_adm1.shp
+ShearModulus : 3e11      #dyne/cm2
+IM           : -5 -4 1
+im           : 
+MaxDistance  : 500
+MagDiscrete  : gauss 10
+Sigma        : 
+PCE          : shuffle MC 500
+IM1          : 0.01
+IM2          : 1
+Spatial      : 
+Spectral     : 
+SourceDeagg  : on
+Clusters     : off 100 1
+
+Option 1 - Logic Tree Weights
+Geom Weight : 1
+Gmpe Weight : 1
+Mscl Weight : 1 
+
+Option 2 - Source Geometry
+geometry 1
+area1 TestArea1  interface  -999 wc1994 0  1 221.6 1000 0 0 rigid -72.75  -34.00  -5.00    -71.00 -34.00  -82.92   -71.00 -32.00  -82.92   -72.75 -32.00 -5.00  
+
+Option 3 - GMPE Library
+gmm at1  Sadigh1997 reverse
+gmm at2  MontalvaBastias2017 interface forearc
+gmm at3  MAB2019 interface south-america 1  #AI
+gmm at4  MAL2020 include 1                  #CAV
+gmm at5  MAL2020 exclude 1                  #CAV
+gmm at6  MMLA2020 1                         #CAV
+gmm at7  ML2021 interface 2                 #CAV
+gmm at8  ML2021 intraslab 2                 #CAV
+gmm at9 MCAVdp2021 interface 2              #CAV
+gmm at10 MCAVdp2021 intraslab 2             #CAV
+
+Option 4 - GMPE GROUPS
+gmmgroup gmm_at3   3
+#gmmgroup gmm_at4   4
+#gmmgroup gmm_at5   5
+#gmmgroup gmm_at6   6
+#gmmgroup gmm_at7   7
+#gmmgroup gmm_at8   8
+#gmmgroup gmm_at9   9
+#gmmgroup gmm_at10  10
+
+
+Option 5 - MAGNITUDE SCALING RELATIONS
+seismicity 1
+truncexp TestArea1  NM 10   1 5 8.5
+
+Option 6 - Pre defined sites
+LC1 -70.5635 -33.4124 691.3 VS30 760

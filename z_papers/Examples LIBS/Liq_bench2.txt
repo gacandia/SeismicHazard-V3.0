@@ -1,0 +1,71 @@
+Option 0 - Global Parameters
+Projection   : WGS84
+Image        : chile.mat
+Boundary     : CHL_adm1.shp
+ShearModulus : 3e11      #dyne/cm2
+IM           : CAV PGA 1
+im           : [logsp(1.55,5000,20);logsp(1e-4,3,20);logsp(5e-5,2.35,20)]
+MaxDistance  : 500
+MagDiscrete  : gauss 10
+Sigma        : 
+PCE          : shuffle MC 500
+IM1          : 0.01
+IM2          : 1
+Spatial      : 
+Spectral     : 
+SourceDeagg  : on
+Clusters     : off 100 1
+
+Option 1 - Logic Tree Weights
+Geom Weight : 1
+Gmpe Weight : 1
+Mscl Weight : 1 
+
+Option 2 - Source Geometry
+geometry 1
+area1 fault1 interface  -999 wc1994 0  1 221 100 0 0 leak  -72.75  -34.00  -5.00    -71.00 -34.00  -82.92   -71.00 -32.00  -82.92   -72.75 -32.00 -5.00  
+area1 fault2 intraslab  -999 wc1994 0  1 221 100 0 0 leak  -72.75  -34.00  -5.00    -71.00 -34.00  -82.92   -71.00 -32.00  -82.92   -72.75 -32.00 -5.00  
+area1 fault3 crustal    -999 wc1994 0  1 221 100 0 0 leak  -72.75  -34.00  -5.00    -71.00 -34.00  -82.92   -71.00 -32.00  -82.92   -72.75 -32.00 -5.00  
+
+Option 3 - GMPE Library
+gmm at1 franky 7 4  # composite (franky) models are used to merge CAV and SA values into one GMM
+gmm at2 franky 7 5  
+gmm at3 franky 7 6 
+gmm at4  BCHydro2012 interface forearc central
+gmm at5  Idini2016 interface sI
+gmm at6  MontalvaBastias2017HQ interface forearc
+gmm at7  BU17 subduction-interface cav
+
+Option 4 - GMPE GROUPS
+gmmgroup Bullock_BCHydro   1
+
+Option 5 - MAGNITUDE SCALING RELATIONS
+seismicity 1
+truncexp fault1  NM 10 0.70 5 8.5
+truncexp fault2  NM 10 0.70 5 8.5
+truncexp fault3  NM 10 0.70 5 8.5
+
+Option 6 - Pre defined sites
+site1 -70.1000 -33.4124 691.3 VS30 761
+
+Option LIBS 1 - Liquefaction Analysis Options
+analysis   : FPBBA               # FPBBA or PBPA
+settlement : logsp(0.01,2000 ,30)   # mm
+tilt       : logsp(1,40,20)      # degrees
+nQ         : 1                   # number of percentiles in Q   uncertainty
+corr       : corr_CambpelBozorgnia2019
+pypath     : "C:/Users/gcandia/AppData/Local/Programs/Python/Python36/python.exe" #"C:\Users\admin\AppData\Local\Programs\Python\Python39\python.EXE"
+
+Option LIBS 2 - Building and Site Specific Parameters
+site1 CPT_benchSite.txt
+
+Option LIBS 3 Settlement model library
+libs BM2017    BrayMacedo2017
+libs BM2017Ds  BrayMacedo2017Ds
+libs J2013Dv   Juang2013Dv
+libs H2020De   Hutabarat2020De
+libs Bullock   Bullock2018
+libs null      libs_null
+
+Option LIBS 4 - Settlement branches
+ST1 J2013Dv null null null 1

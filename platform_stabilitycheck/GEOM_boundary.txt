@@ -1,0 +1,42 @@
+Option 0 - Global Parameters
+Projection   : ECEF
+Image        : 
+Boundary     : 
+ShearModulus : 3e11      #dyne/cm2
+IM           : 0.001
+im           : logsp(0.001,1,30);
+MaxDistance  : 500
+MagDiscrete  : gauss 15
+Sigma        : 
+PCE          : shuffle MC 500
+IM1          : 0.01
+IM2          : 1
+Spatial      : 
+Spectral     : 
+SourceDeagg  : on
+Clusters     : off 100 1
+
+Option 1 - Logic Tree Weights
+Geom Weight : 1
+Gmpe Weight : 1
+Mscl Weight : 1
+
+Option 2 - Source Geometry
+geometry 1
+area1 S1  crustal strike-slip strasser2010 0 1 100 10 0 20 leak   0 0 0  100 0 0   100 500 0   0 500 0
+area1 S2  crustal strike-slip strasser2010 0 1 100 10 0 20 rigid  0 0 0  100 0 0   100 500 0   0 500 0
+
+Option 3 - GMPE Library
+gmm Sadigh97 Sadigh1997 strike-slip
+
+Option 4 - GMPE GROUPS
+gmmgroup Sadigh1997 1
+
+Option 5 - MAGNITUDE SCALING RELATIONS
+seismicity 1
+truncexp S1 NM 2 1 5 8 
+truncexp S2 NM 2 1 5 8
+
+
+Option 6 - Pre defined sites (Optional)
+site1  200 0 0  VS30 760

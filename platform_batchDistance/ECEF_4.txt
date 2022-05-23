@@ -1,0 +1,81 @@
+Option 0 - Global Parameters
+Projection   : ECEF
+Image        : 
+Boundary     : 
+ShearModulus : 3e11      #dyne/cm2
+IM           : 0
+im           : 
+MaxDistance  : 500
+MagDiscrete  : gauss 10
+Sigma        : overwrite 0
+PCE          : shuffle MC 500
+IM1          : 0.01
+IM2          : 1
+Spatial      : 
+Spectral     : 
+SourceDeagg  : on
+Clusters     : off 100 1
+
+Option 1 - Logic Tree Weights
+Geom Weight : 1
+Gmpe Weight : 1
+Mscl Weight : 1 
+
+Option 2 - Source Geometry
+geometry 1 # Ztor = 15, W = 15*sqrt(2), L = 10, dip =-45° many nodes
+#area1 S1 crustal strike-slip wc1994 0 1 10 6 2 0 rigid -5  0    -25  -5 -5    -30 -5 -10   -35 -5 -15   -40 5 -15   -40  5  0    -25          
+area1 S1 crustal strike-slip wc1994 0 1 10 6 2 0 rigid -5  0    -25   -5 -15   -40 5 -15   -40  5  0    -25          
+#area2  S1 crustal strike-slip wc1994 0 1 | 90 45 | 10 21.213 | 2.01 2 | -5 0 -25
+
+Option 3 - GMPE Library
+gmm Sadigh97 Sadigh1997 strike-slip
+
+Option 4 - GMPE GROUPS
+gmmgroup Sadigh1997 1
+
+Option 5 - MAGNITUDE SCALING RELATIONS
+seismicity 1
+delta S1 NM 2 7.0 
+
+Option 6 - Pre defined sites (Optional)
+site1   0 -20 0 VS30 760
+site2   0 -18 0 VS30 760
+site3   0 -16 0 VS30 760                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+site4   0 -14 0 VS30 760
+site5   0 -12 0 VS30 760
+site6   0 -10 0 VS30 760
+site7   0  -8 0 VS30 760
+site8   0  -6 0 VS30 760
+site9   0  -4 0 VS30 760
+site10  0  -2 0 VS30 760
+site11  0   0 0 VS30 760
+site12  0   2 0 VS30 760
+site13  0   4 0 VS30 760
+site14  0   6 0 VS30 760
+site15  0   8 0 VS30 760
+site16  0  10 0 VS30 760
+site17  0  12 0 VS30 760
+site18  0  14 0 VS30 760
+site19  0  16 0 VS30 760
+site20  0  18 0 VS30 760
+site21  0  20 0 VS30 760
+site22  0  22 0 VS30 760
+site23  0  24 0 VS30 760
+site24  0  26 0 VS30 760
+site25  0  28 0 VS30 760
+site26  0  30 0 VS30 760
+site27  0  32 0 VS30 760
+site28  0  34 0 VS30 760
+site29  0  36 0 VS30 760
+site30  0  38 0 VS30 760
+site31  0  40 0 VS30 760
+site32  0  42 0 VS30 760
+site33  0  44 0 VS30 760
+site34  0  46 0 VS30 760
+site35  0  48 0 VS30 760
+site36  0  50 0 VS30 760
+site37  0  52 0 VS30 760
+site38  0  54 0 VS30 760
+site39  0  56 0 VS30 760
+site40  0  58 0 VS30 760
+site41  0  60 0 VS30 760

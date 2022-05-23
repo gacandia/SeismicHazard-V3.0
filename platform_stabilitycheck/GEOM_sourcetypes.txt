@@ -1,0 +1,64 @@
+Option 0 - Global Parameters
+Projection   : ECEF
+Image        : 
+Boundary     : 
+ShearModulus : 3e11      #dyne/cm2
+IM           : 0.001
+im           : logsp(0.001,0.5,20);
+MaxDistance  : 500
+MagDiscrete  : gauss 10
+Sigma        : overwrite 0
+CGMM         : shuffle MC 500
+IM1          : 0.01
+IM2          : 1
+Spatial      : 
+Spectral     : 
+SourceDeagg  : on
+Clusters     : off 100 1
+
+Option 1 - Logic Tree Weights
+Geom Weight : 1
+Gmpe Weight : 1
+Mscl Weight : 1 
+
+Option 2 - Source Geometry
+geometry 1
+point1   P0  crustal normal wc1994 0 1 | 0 90              | -12 0 0
+point1   P1  crustal normal wc1994 0 1 | 0 90              | -10 0 0
+
+line1    L11  crustal normal wc1994 0 1 | 80 5 1            | -10 10  0  -10 30 0
+line1    L12  crustal normal wc1994 0 1 | 80 5 1            |  10 10  0   10 30 0
+
+area1    A11 crustal normal wc1994 0 1 20 | 2 0         0 leak   | 20 20 -10 40 20 -21.5470053837925 40 40 -21.5470053837925 20 40 -10
+
+area1    A12 crustal normal wc1994 0 1 | 45 1   20  2    0    0.5 leak   | 20 0 30 2 40 10
+area1    A13 crustal normal wc1994 0 1 |             0 leak   | TestArea.mat
+
+area2    A2  crustal normal wc1994 0 1 | 90 45  25 12   2 1   | 0  -10 0  
+
+volume1  V1  crustal normal null   0 1 | 2 0 10 3          | 20 50 0 40 50 -10 40 70 -10 20 70 0
+
+Option 3 - GMPE Library
+gmm Sadigh97 Sadigh1997 strike-slip
+
+Option 4 - GMPE GROUPS
+gmmgroup Sadigh1997 1
+
+Option 5 - MAGNITUDE SCALING RELATIONS
+seismicity 1
+truncexp  P0  NM 4 0.4 6 8
+truncexp  P1  NM 4 0.4 6 8
+
+truncexp  L11  NM 4 0.4 6 8
+truncexp  L12  NM 4 0.4 6 8
+
+truncexp  A11 NM 4 0.4 6 8
+truncexp  A12 NM 4 0.4 6 8
+truncexp  A13 NM 4 0.4 6 8
+
+truncexp  A2  NM 4 0.4 6 8
+truncexp  V1  NM 4 0.4 6 8
+
+
+Option 6 - Pre defined sites (Optional)
+site1 5 5 0 VS30 760 

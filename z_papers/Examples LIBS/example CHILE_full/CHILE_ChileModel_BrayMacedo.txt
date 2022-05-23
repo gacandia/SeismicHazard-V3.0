@@ -1,0 +1,75 @@
+Option 0 - Global Parameters
+Projection   : WGS84
+Image        : chile.mat
+Boundary     : CHL_adm1.shp
+ShearModulus : 3e11      #dyne/cm2
+IM           : CAV PGA 1
+im           :
+MaxDistance  : 500
+MagDiscrete  : gauss 10
+Sigma        : truncate 3
+PCE          : shuffle MC 500
+IM1          : 0.01
+IM2          : 1
+Spatial      : 
+Spectral     : 
+SourceDeagg  : on
+Clusters     : off 100 1
+
+Option 1 - Logic Tree Weights
+Geom Weight : 1
+Gmpe Weight : 1#0.5 0.5
+Mscl Weight : 1 
+
+Option 2 - Source Geometry
+geometry 1
+area1 zoneI interface normal strasser2010 0 1 60 rigid zoneI.mat
+area1 zoneS intraslab normal strasser2010 0 2 60 rigid zoneS.mat
+
+Option 3 - GMPE Library
+gmm at1  MontalvaBastias2017 interface forearc                     
+gmm at2  MontalvaBastias2017 intraslab forearc                     
+gmm at3  BCHydro2012 interface forearc central                     
+gmm at4  BCHydro2012 intraslab forearc central                     
+gmm at5  MCAVdp2021 interface 1
+gmm at6  MCAVdp2021 intraslab 2
+gmm at7  MCAVdp2021 interface 3
+gmm at8  MCAVdp2021 intraslab 4
+
+Option 4 - GMPE GROUPS
+#gmmgroup Montalva2017-MCAVdp  5 6
+gmmgroup BCHydro-MCAVdp       7 8
+
+Option 5 - MAGNITUDE SCALING RELATIONS
+seismicity 1
+truncexp zoneI NM 17.783 0.8600 5 9.2
+truncexp zoneS NM 23.988 1.0200 5 8.5
+
+Option 6 - Pre defined sites
+site1 -70.683570   -33.54239971 0 VS30 270
+
+Option 7 - Spacial distributed data
+layer VS30 CHI_USGS.mat 760
+
+Option LIBS 1 - Liquefaction Analysis Options
+analysis   : FPBBA              # FPBBA or PBPA
+settlement : logsp(1,5000 ,100) # mm
+tilt       : logsp(1,40,20)     # degrees
+nQ         : 1                  # number of percentiles in Q   uncertainty
+corr       : corr_CambpelBozorgnia2019 
+pypath     : "C:/Users/gcandia/AppData/Local/Programs/Python/Python36/python.exe" #"C:\Users\admin\AppData\Local\Programs\Python\Python39\python.EXE"
+
+Option LIBS 2 - Building and Site Specific Parameters
+site1 CPTZ1B3.txt
+
+Option LIBS 3 Settlement model library
+libs J2013Dv   Juang2013Dv
+libs BM2017Ds  BrayMacedo2017Ds
+libs BM2017    BrayMacedo2017
+libs Bullock   Bullock2018
+libs null      libs null
+
+Option LIBS 4 - Settlement branches
+ST2  BM2017Ds BM2017Ds  null null NaN
+ST2  J2013Dv  J2013Dv   null null NaN
+ST2  BM2017   BM2017    null null NaN 

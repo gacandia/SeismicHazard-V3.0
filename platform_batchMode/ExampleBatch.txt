@@ -1,0 +1,29 @@
+
+
+# UHS Commands
+Chile_DSHA.txt out2.txt uhs  1 deag 475 1000
+Chile_DSHA.txt -out2.txt uhs 1 mean 50 100 250 475 1000 2475 5000
+
+## HAZ Commands
+#Chile_DSHA.txt -out2.txt haz 1 deag SA(T=1) auto                         
+#Chile_DSHA.txt -out2.txt haz 1 mean SA(T=1) auto                         
+#Chile_DSHA.txt -out2.txt haz 1 deag SA(T=1) 50 100 250 475 1000 2475 5000
+#Chile_DSHA.txt -out2.txt haz 1 mean SA(T=1) 50 100 250 475 1000 2475 5000
+
+# HAZM Commands
+#Chile_DSHA.txt  -out2.txt hazm  list  1 2 3 4 5   SA(T=1) 50 100 250 475 1000 2475 5000 10000 20000
+#CChile_DSHA.txt -out2.txt hazm  range 1 5         SA(T=1) 50 100 250 475 1000 2475 5000
+#
+## CMS Commands
+#Chile_DSHA.txt -out2.txt cms 1 method1    1 475 0.9 mean corr_Abrahamson2014 within
+#Chile_DSHA.txt -out2.txt cms 1 method2 -999 475 0.9 mean corr_Abrahamson2014 within
+#Chile_DSHA.txt -out2.txt cms 1 method2 -999 475 0.9 mode corr_Abrahamson2014 within
+#
+## deagMR Commands
+#Chile_DSHA.txt -out2.txt deagMR 1 475 1 SA(T=1)
+#Chile_DSHA.txt -out2.txt deagMR 1 475 1 SA(T=2)
+#Chile_DSHA.txt -out2.txt deagMR 1 475 1 SA(T=3)
+#
+## VHAZ Commands
+#Chile_DSHA.txt -out2.txt vhaz 1 BC2002 1 PGA SA(T=1) MRE manual 0.6
+#Chile_DSHA.txt -out2.txt vhaz 1 BC2002 1 PGA SA(T=1) MRD corr_Abrahamson2014 within
