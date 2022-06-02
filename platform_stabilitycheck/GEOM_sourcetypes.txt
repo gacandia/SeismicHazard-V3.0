@@ -30,7 +30,8 @@ line1    L11  crustal normal wc1994 0 1 | 80 5 1            | -10 10  0  -10 30 
 line1    L12  crustal normal wc1994 0 1 | 80 5 1            |  10 10  0   10 30 0
 
 area1    A11 crustal normal wc1994 0 1 20 | 2 0         0 leak   | 20 20 -10 40 20 -21.5470053837925 40 40 -21.5470053837925 20 40 -10
-area1    A12 crustal normal wc1994 0 1 | 45 1  20  2    0    0.5 leak   | 20 0 30 2 40 10
+
+area1    A12 crustal normal wc1994 0 1 | 45 1   20  2    0    0.5 leak   | 20 0 30 2 40 10
 area1    A13 crustal normal wc1994 0 1 |             0 leak   | TestArea.mat
 
 area2    A2  crustal normal wc1994 0 1 | 90 45  25 12   2 1   | 0  -10 0  
