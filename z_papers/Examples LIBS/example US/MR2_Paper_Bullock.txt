@@ -6,7 +6,7 @@ ShearModulus : 3e11      #dyne/cm2
 IM           : CAV
 im           : 
 MaxDistance  : 500
-MagDiscrete  : gauss 10
+MagDiscrete  : uniform 0.1
 Sigma        : 
 PCE          : shuffle MC 500
 IM1          : 0.01

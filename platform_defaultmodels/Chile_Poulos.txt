@@ -61,7 +61,7 @@ truncexp zone6 NM 3.7154 1.1100 5 8.4
 truncexp zone7 NM 2.6303 0.9800 5 8.5
 
 Option 6 - Pre defined sites
-LasCondes -70.5635 -33.4124 691.3   VS30 1000
+LasCondes -70.5635 -33.4124 691.3   VS30 300
 
 Option 7 - Spacial distributed data
 #layer VS30 CHI_USGS.mat 500

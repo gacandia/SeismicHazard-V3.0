@@ -3,11 +3,11 @@ Projection   : ECEF
 Image        : 
 Boundary     : 
 ShearModulus : 3e11      #dyne/cm2
-IM           : 0.001
+IM           : 0.01
 im           : logsp(0.001,0.5,20);
 MaxDistance  : 500
 MagDiscrete  : gauss 10
-Sigma        : overwrite 0
+Sigma        : 
 CGMM         : shuffle MC 500
 IM1          : 0.01
 IM2          : 1
@@ -23,18 +23,20 @@ Mscl Weight : 1
 
 Option 2 - Source Geometry
 geometry 1
-volume1  V1  crustal normal null    0 1 | 2 0 10 4   | 0 0 0    10 0 -10    10 10 -10    0 10 0
-#volume1  V1  crustal normal null   0 1 | 2 0 10 2   | 0 0 0    0 0 -10   10 0 -10       10 0 0
+#area1  V1  interface normal null  0 1 100 | 10  0 0 leak   | 0 0 -200    10 0 -200    10 10 -200    0 10 -200
+volume1  V1   interface normal null  0 1   | 100 0 100  5    | 0 0 -200    10 0 -200    10 10 -200    0 10 -200
+#volume1  V1    interface normal null  0 1 | 10 0 10  5   | 0 0 -20     10 0 -20     10 10 -20     0 10 -20
 
 Option 3 - GMPE Library
-gmm Sadigh97 Sadigh1997 strike-slip
+gmm Montalva MontalvaBastias2017 intraslab forearc
 
 Option 4 - GMPE GROUPS
 gmmgroup Sadigh1997 1
 
 Option 5 - MAGNITUDE SCALING RELATIONS
 seismicity 1
-truncexp  V1  NM 4 0.4 6 8
+#delta  V1  NM 1 7
+truncexp V1 NM 1 0.5 5 7
 
 Option 6 - Pre defined sites (Optional)
 site1 5 5 0 VS30 760 
