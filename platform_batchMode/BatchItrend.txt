@@ -1,0 +1,11 @@
+
+
+# UHS Commands
+Chile_Itrend.txt  ItrendResults.txt uhs 1 mean 475 2475
+Chile_Itrend.txt -ItrendResults.txt uhs 2 mean 475 2475
+Chile_Itrend.txt -ItrendResults.txt uhs 3 mean 475 2475
+Chile_Itrend.txt -ItrendResults.txt uhs 4 mean 475 2475
+Chile_Itrend.txt -ItrendResults.txt uhs 5 mean 475 2475
+
+# HAZM Commands
+#Chile_Itrend.txt ItrendResults.txt hazm  list  1 2 3 4 5   SA(T=0.01)
