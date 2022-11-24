@@ -3,7 +3,7 @@ Projection   : WGS84
 Image        : chile.mat
 Boundary     : CHL_adm1.shp
 ShearModulus : 3e11      #dyne/cm2
-IM           : PGA 0.5 1
+IM           : PGA
 im           : 
 MaxDistance  : 500
 MagDiscrete  : gauss 10
@@ -128,12 +128,8 @@ truncexp S38  NM 0.165 0.87 5 8.5
 truncexp S39  NM 0.131 0.87 5 8.5
 
 Option 6 - Pre defined sites
-T1 -71.2139 -33.6866 0.0  VS30 760
+LasCondes1 -70.5635 -33.40 0 VS30 500
+LasCondes2 -70.5635 -33.40 0 VS30 1000
 
 Option 7 - Spacial distributed data
 layer VS30 CHI_SIGAS.mat CHI_USGS.mat 760
-
-Option 9 - Event Simulation (optional)
-eq1 interface auto 6.6 -73.08 -36.1 -30
-eq2 interface S12  7.7 -73.08 -36.1 -30
-eq3 interface S13  8.8 -73.08 -36.1 -20

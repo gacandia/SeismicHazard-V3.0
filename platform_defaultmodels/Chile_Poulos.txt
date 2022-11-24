@@ -1,12 +1,12 @@
-14Option 0 - Global Parameters
+Option 0 - Global Parameters
 Projection   : WGS84
 Image        : chile.mat
 Boundary     : CHL_adm1.shp
 ShearModulus : 3e11      #dyne/cm2
-IM           : 0.01
+IM           : PGA
 im           : 
 MaxDistance  : 500
-MagDiscrete  : isampling 7
+MagDiscrete  : gauss 10
 Sigma        : truncate 3
 PCE          : shuffle MC 500
 IM1          : 0.01
@@ -18,7 +18,7 @@ Clusters     : off 100 1
 
 Option 1 - Logic Tree Weights
 Geom Weight : 1
-Gmpe Weight : 1/5 1/5 1/5 1/5 1/5
+Gmpe Weight : 1/6 1/6 1/6 1/6 1/6 1/6
 Mscl Weight : 1 
 
 Option 2 - Source Geometry
@@ -32,23 +32,26 @@ area1 zone6 intraslab normal strasser2010 0 2 60 rigid zone6.mat
 area1 zone7 intraslab normal strasser2010 0 2 60 rigid zone7.mat
 
 Option 3 - GMPE Library
-gmm at1   Zhao2006 interface
-gmm at2   Zhao2006 intraslab
-gmm at3   MontalvaBastias2017 interface forearc
-gmm at4   MontalvaBastias2017 intraslab forearc
-gmm at5   Kuehn2020 interface south_america_s 0 0 0.55 2 0           
-gmm at6   Kuehn2020 intraslab south_america_s 0 0 0.55 2 0
-gmm at7   Parker2020 -999 interface south_america_s no      
-gmm at8   Parker2020 -999 intraslab south_america_s no         
-gmm at9   AG2020     -999 interface sam
-gmm at10  AG2020     -999 intraslab sam
+gmm at1  Youngs1997 interface
+gmm at2  Youngs1997 intraslab
+gmm at3  AtkinsonBoore2003 interface general
+gmm at4  AtkinsonBoore2003 intraslab general
+gmm at5  Zhao2006 interface
+gmm at6  Zhao2006 intraslab
+gmm at7  BCHydro2012 interface forearc central
+gmm at8  BCHydro2012 intraslab forearc central
+gmm at9  Idini2016 interface sI
+gmm at10 Idini2016 intraslab sI
+gmm at11 MontalvaBastias2017HQ interface forearc
+gmm at12 MontalvaBastias2017HQ intraslab forearc
 
 Option 4 - GMPE GROUPS
-gmmgroup Zhao2006        1  2 
-gmmgroup Montalva2017    3  4
-gmmgroup Kuehn2020       5  6 
-gmmgroup Parker2020      7  8 
-gmmgroup AG2020          9  10
+gmmgroup Youngs,1997      1   2
+gmmgroup AB,2003          3   4 
+gmmgroup Zhao,2006        5   6 
+gmmgroup Abrahamson,2012  7   8 
+gmmgroup Idini,2016       9   10
+gmmgroup Montalva,2017    11  12
 
 Option 5 - MAGNITUDE SCALING RELATIONS
 seismicity 1
@@ -65,4 +68,4 @@ LasCondes1 -70.5635 -33.40 0 VS30 500
 LasCondes2 -70.5635 -33.40 0 VS30 1000
 
 Option 7 - Spacial distributed data
-layer VS30 CHI_SIGAS.mat CHI_USGS.mat 500
+layer VS30 CHI_SIGAS.mat CHI_USGS.mat 760
