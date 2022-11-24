@@ -1,0 +1,68 @@
+14Option 0 - Global Parameters
+Projection   : WGS84
+Image        : chile.mat
+Boundary     : CHL_adm1.shp
+ShearModulus : 3e11      #dyne/cm2
+IM           : 0.01
+im           : 
+MaxDistance  : 500
+MagDiscrete  : isampling 7
+Sigma        : truncate 3
+PCE          : shuffle MC 500
+IM1          : 0.01
+IM2          : 1.25
+Spatial      : spa_SR2019
+Spectral     : corr_BCHhydro2016
+SourceDeagg  : on
+Clusters     : off 100 1
+
+Option 1 - Logic Tree Weights
+Geom Weight : 1
+Gmpe Weight : 1/5 1/5 1/5 1/5 1/5
+Mscl Weight : 1 
+
+Option 2 - Source Geometry
+geometry 1
+area1 zone1 interface normal strasser2010 0 1 60 rigid zone1.mat
+area1 zone2 interface normal strasser2010 0 1 60 rigid zone2.mat
+area1 zone3 interface normal strasser2010 0 1 60 rigid zone3.mat
+area1 zone4 intraslab normal strasser2010 0 2 60 rigid zone4.mat
+area1 zone5 intraslab normal strasser2010 0 2 60 rigid zone5.mat
+area1 zone6 intraslab normal strasser2010 0 2 60 rigid zone6.mat
+area1 zone7 intraslab normal strasser2010 0 2 60 rigid zone7.mat
+
+Option 3 - GMPE Library
+gmm at1   Zhao2006 interface
+gmm at2   Zhao2006 intraslab
+gmm at3   MontalvaBastias2017 interface forearc
+gmm at4   MontalvaBastias2017 intraslab forearc
+gmm at5   Kuehn2020 interface south_america_s 0 0 0.55 2 0           
+gmm at6   Kuehn2020 intraslab south_america_s 0 0 0.55 2 0
+gmm at7   Parker2020 -999 interface south_america_s no      
+gmm at8   Parker2020 -999 intraslab south_america_s no         
+gmm at9   AG2020     -999 interface sam
+gmm at10  AG2020     -999 intraslab sam
+
+Option 4 - GMPE GROUPS
+gmmgroup Zhao2006        1  2 
+gmmgroup Montalva2017    3  4
+gmmgroup Kuehn2020       5  6 
+gmmgroup Parker2020      7  8 
+gmmgroup AG2020          9  10
+
+Option 5 - MAGNITUDE SCALING RELATIONS
+seismicity 1
+truncexp zone1 NM 6.3096 0.8700 5 9.2
+truncexp zone2 NM 9.1201 0.8800 5 9.3
+truncexp zone3 NM 2.5704 0.7700 5 9.6
+truncexp zone4 NM 4.0738 0.9000 5 8.6
+truncexp zone5 NM 4.7911 1.0400 5 8.4
+truncexp zone6 NM 3.7154 1.1100 5 8.4
+truncexp zone7 NM 2.6303 0.9800 5 8.5
+
+Option 6 - Pre defined sites
+LasCondes1 -70.5635 -33.40 0 VS30 500
+LasCondes2 -70.5635 -33.40 0 VS30 1000
+
+Option 7 - Spacial distributed data
+layer VS30 CHI_SIGAS.mat CHI_USGS.mat 500

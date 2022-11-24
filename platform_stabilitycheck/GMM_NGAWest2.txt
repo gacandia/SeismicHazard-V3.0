@@ -1,0 +1,62 @@
+Option 0 - Global Parameters
+Projection   : WGS84
+Image        : chile.mat
+Boundary     : CHL_adm1.shp
+ShearModulus : 3e11      #dyne/cm2
+IM           : PGA 1 2 3
+im           : logsp(0.001,3,20)
+MaxDistance  : 500
+MagDiscrete  : gauss 6
+Sigma        : 
+PCE          : shuffle MC 500
+IM1          : 0.01
+IM2          : 1
+Spatial      : 
+Spectral     : 
+SourceDeagg  : on
+Clusters     : off 100 1
+
+Option 1 - Logic Tree Weights
+Geom Weight : 1
+Gmpe Weight : ones(1,10)/10
+Mscl Weight : 1 
+
+Option 2 - Source Geometry
+geometry 1
+area1 TestArea1  interface  -999 wc1994 0 1 221.6 1000 0 0 leak -72.75  -34.00  -5.00    -71.00 -34.00  -82.92   -71.00 -32.00  -82.92   -72.75 -32.00 -5.00  
+#area1 TestArea1 interface normal strasser2010 0 1 60 rigid zone2.mat
+
+Option 3 - GMPE Library
+gmm  gmm_I2008                   I2008 strike-slip                                               #Idriss 2008 - NGA            
+gmm  gmm_CY2008                  CY2008 unk strike-slip mainshock measured                       #Chiou Youngs 2008 - NGA      
+gmm  gmm_BA2008                  BA2008 strike-slip                                              #Boore Atkinson 2008 - NGA    
+gmm  gmm_CB2008                  CB2008 2 strike-slip average                                    #Campbell Bozorgnia 2008 - NGA
+gmm  gmm_AS2008                  AS2008 unk strike-slip mainshock measured                       #Abrahamson Silva 2008 - NGA  
+gmm  gmm_I2014                   I2014 strike-slip                                               #Idriss 2014 - NGAW2          
+gmm  gmm_CY2014                  CY2014 0.4 strike-slip measured global                          #CY 2014 - NGAW2              
+gmm  gmm_CB2014                  CB2014 0.67 strike-slip include global                          #CB 2014 - NGAW2              
+gmm  gmm_BSSA2014                BSSA2014 2 strike-slip global                                   #BSSA 2014 - NGAW2            
+gmm  gmm_ASK2014                 ASK2014 unk strike-slip mainshock  measured global              #ASK 2014 - NGAW2             
+
+Option 4 - GMPE GROUPS                                                                                                        
+gmmgroup  I2008      1 
+gmmgroup  CY2008     2 
+gmmgroup  BA2008     3 
+gmmgroup  CB2008     4 
+gmmgroup  AS2008     5 
+gmmgroup  I2014      6 
+gmmgroup  CY2014     7 
+gmmgroup  CB2014     8 
+gmmgroup  BSSA2014   9 
+gmmgroup  ASK2014    10 
+
+Option 5 - MAGNITUDE SCALING RELATIONS
+seismicity 1
+truncexp TestArea1  NM 10   1 5 8.5
+
+Option 6 - Pre defined sites
+LC1 -70.5635 -33.4124 691.3 VS30 760  f0 1
+
+Option 7 - Spacial distributed data
+layer VS30 760
+layer f0 1

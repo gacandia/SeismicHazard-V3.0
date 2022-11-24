@@ -1,0 +1,9 @@
+Chile_Default.txt
+Colombia_Cortical_Interplaca.txt
+Chile_Poulos.txt
+GMM_ngasub.txt
+Chile_Poulos_Sensico.txt
+GMM_declust1.txt
+GMM_declust2.txt
+GMM_declust3.txt
+GEOM_multiplesources.txt
