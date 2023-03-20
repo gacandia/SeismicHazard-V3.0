@@ -40,7 +40,8 @@ gmmgroup Sadigh1997 1
 
 Option 5 - MAGNITUDE SCALING RELATIONS
 seismicity 1
-truncexp S1 SR 2 0.9 5 6.5
+#truncexp S1 SR 2 0.9 5 6.5  # this requieres integration between Mmin=0 to Mmax
+truncexp S1 NM 0.0406809 0.9 5 6.5
 
 Option 6 - Pre defined sites (Optional)
 site1 -122.000 38.1130 0 VS30 760 # On Fault Midpoint along Strike 

@@ -33,7 +33,7 @@ geometry 1
 area2  Fault3 crustal reverse wc1994 0 1 | 180 45 | 85 15.556349186104 | 2 0.03 | -65 0.38221 -1
                                                      
 Option 3 - GMPE Library
-gmm CY2014 CY2014 0.048 reverse measured california
+gmm CY2014 CY2014 reverse measured california
 
 Option 4 - GMPE GROUPS
 gmmgroup CY2014 1
@@ -43,12 +43,12 @@ seismicity 1
 delta Fault3 SR 2 7
 
 Option 6 - Pre defined sites (Optional)
-site1 -64.91005  0.00000 0.0000 VS30 760
-site2 -65.04497  0.00000 0.0000 VS30 760
-site3 -65.08995  0.00000 0.0000 VS30 760
-site4 -65.13490  0.00000 0.0000 VS30 760
-site5 -65.22483  0.00000 0.0000 VS30 760
-site6 -65.00900 -0.42718 0.0000 VS30 760
+site1 -64.91005  0.00000 0.0000 VS30 760 Z10 0.048
+site2 -65.04497  0.00000 0.0000 VS30 760 Z10 0.048
+site3 -65.08995  0.00000 0.0000 VS30 760 Z10 0.048
+site4 -65.13490  0.00000 0.0000 VS30 760 Z10 0.048
+site5 -65.22483  0.00000 0.0000 VS30 760 Z10 0.048
+site6 -65.00900 -0.42718 0.0000 VS30 760 Z10 0.048
 
 Option 8 - Verification Hazard Curve (Optional)
 PGA   1.000E-03 1.000E-02 5.000E-02 1.000E-01 1.500E-01 2.000E-01 2.500E-01 3.000E-01 3.500E-01 4.000E-01 4.500E-01 5.000E-01 5.500E-01 6.000E-01 7.000E-01 8.000E-01

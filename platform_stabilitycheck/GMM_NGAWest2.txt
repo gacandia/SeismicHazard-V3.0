@@ -23,20 +23,19 @@ Mscl Weight : 1
 
 Option 2 - Source Geometry
 geometry 1
-area1 TestArea1  interface  -999 wc1994 0 1 221.6 1000 0 0 leak -72.75  -34.00  -5.00    -71.00 -34.00  -82.92   -71.00 -32.00  -82.92   -72.75 -32.00 -5.00  
-#area1 TestArea1 interface normal strasser2010 0 1 60 rigid zone2.mat
+area1 TestArea1  interface  -999 wc1994 0 1   1000 0 0 leak -72.75  -34.00  -5.00    -71.00 -34.00  -82.92   -71.00 -32.00  -82.92   -72.75 -32.00 -5.00  
 
 Option 3 - GMPE Library
-gmm  gmm_I2008                   I2008 strike-slip                                               #Idriss 2008 - NGA            
-gmm  gmm_CY2008                  CY2008 unk strike-slip mainshock measured                       #Chiou Youngs 2008 - NGA      
-gmm  gmm_BA2008                  BA2008 strike-slip                                              #Boore Atkinson 2008 - NGA    
-gmm  gmm_CB2008                  CB2008 2 strike-slip average                                    #Campbell Bozorgnia 2008 - NGA
-gmm  gmm_AS2008                  AS2008 unk strike-slip mainshock measured                       #Abrahamson Silva 2008 - NGA  
-gmm  gmm_I2014                   I2014 strike-slip                                               #Idriss 2014 - NGAW2          
-gmm  gmm_CY2014                  CY2014 0.4 strike-slip measured global                          #CY 2014 - NGAW2              
-gmm  gmm_CB2014                  CB2014 0.67 strike-slip include global                          #CB 2014 - NGAW2              
-gmm  gmm_BSSA2014                BSSA2014 2 strike-slip global                                   #BSSA 2014 - NGAW2            
-gmm  gmm_ASK2014                 ASK2014 unk strike-slip mainshock  measured global              #ASK 2014 - NGAW2             
+gmm  gmm_I2008       I2008    strike-slip                                   # Idriss 2008 - NGA            
+gmm  gmm_CY2008      CY2008   strike-slip mainshock measured                # Chiou Youngs 2008 - NGA      
+gmm  gmm_BA2008      BA2008   strike-slip                                   # Boore Atkinson 2008 - NGA    
+gmm  gmm_CB2008      CB2008   strike-slip average                           # Campbell Bozorgnia 2008 - NGA
+gmm  gmm_AS2008      AS2008   strike-slip mainshock measured                # Abrahamson Silva 2008 - NGA  
+gmm  gmm_I2014       I2014    strike-slip                                   # Idriss 2014 - NGAW2          
+gmm  gmm_CY2014      CY2014   strike-slip measured global                   # CY 2014 - NGAW2              
+gmm  gmm_CB2014      CB2014   strike-slip include global                    # CB 2014 - NGAW2              
+gmm  gmm_BSSA2014    BSSA2014 strike-slip global                            # BSSA 2014 - NGAW2            
+gmm  gmm_ASK2014     ASK2014  strike-slip mainshock  measured global        # ASK 2014 - NGAW2             
 
 Option 4 - GMPE GROUPS                                                                                                        
 gmmgroup  I2008      1 
@@ -55,8 +54,9 @@ seismicity 1
 truncexp TestArea1  NM 10   1 5 8.5
 
 Option 6 - Pre defined sites
-LC1 -70.5635 -33.4124 691.3 VS30 760  f0 1
+LC1 -70.5635 -33.4124 691.3 VS30 760  Z10 NaN Z25 0.607
 
 Option 7 - Spacial distributed data
 layer VS30 760
-layer f0 1
+layer Z10 0.4
+layer Z25 0.607

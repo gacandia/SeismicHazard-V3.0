@@ -40,7 +40,9 @@ gmmgroup Sadigh1997 1
 
 Option 5 - MAGNITUDE SCALING RELATIONS
 seismicity 1
-yc1985 S1 SR 2 0.9 5 6.2
+#yc1985 S1 SR 2 0.9 5 6.2
+yc1985 S1 NM 0.0116596 0.9 5 6.2
+
 
 Option 6 - Pre defined sites (Optional)
 site1 -122.000 38.1130 0.0 VS30 760 # On Fault Midpoint along Strike 
