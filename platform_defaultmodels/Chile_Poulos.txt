@@ -56,13 +56,13 @@ gmmgroup Montalva,2017    11  12
 
 Option 5 - MAGNITUDE SCALING RELATIONS
 seismicity 1
-truncexp zone1 NM 6.3096 0.8700 5 9.2
-truncexp zone2 NM 9.1201 0.8800 5 9.3
-truncexp zone3 NM 2.5704 0.7700 5 9.6
-truncexp zone4 NM 4.0738 0.9000 5 8.6
+truncexp zone1 NM  6.3096 0.8700 5 9.2
+truncexp zone2 NM  9.1201 0.8800 5 9.3
+truncexp zone3 NM  2.5704 0.7700 5 9.6
+truncexp zone4 NM  4.0738 0.9000 5 8.6
 truncexp zone5 NM 14.7911 1.0400 5 8.4
-truncexp zone6 NM 3.7154 1.1100 5 8.4
-truncexp zone7 NM 2.6303 0.9800 5 8.5
+truncexp zone6 NM  3.7154 1.1100 5 8.4
+truncexp zone7 NM  2.6303 0.9800 5 8.5
 #delta    MAULE NM 0 8.8
 
 Option 6 - Pre defined sites
